@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <title>MY NEW COOKBOOK!</title>
+    <style>
+         body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #fff;
+        }
+
+        .navbar {
+            background-color: #fff;
+            padding: 20px 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .navbar .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar .logo img {
+            height: 40px;
+            margin-right: 10px;
+        }
+
+        .navbar .nav-links {
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar .nav-links a {
+            color: #333;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+
+        .navbar .search {
+            position: relative;
+        }
+
+        .navbar .search input {
+            padding: 5px 10px;
+            border-radius: 20px;
+            border: 1px solid #ddd;
+        }
+
+        .navbar .social-icons {
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar .social-icons a {
+            margin: 0 5px;
+            color: #333;
+        }
+
+        .container {
+            display: flex;
+            align-items: center;
+            background-color: #286f78;
+            height: 600px;
+            color: #fff;
+        }
+        .book {
+            flex: 1;
+            text-align: center;
+        }
+        .content {
+            flex: 2;
+            margin-left: 190px;
+        }
+        .content h1 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+        .content h2 {
+            font-size: 3rem;
+            margin: 0;
+        }
+        .content p {
+            margin-top: 10px;
+            font-size: 1.2rem;
+        }
+        .select-buttons {
+            width: 50%;
+            margin-top: 40px;
+            display: flex;
+            gap:20px ;
+        }
+        .select-buttons select,
+        .pre-order-button {
+            width:50% ;
+            padding: 10px;
+            border-radius: 50px;
+            border: none;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+        .select-buttons select {
+            flex: 1;
+        }
+        .pre-order-button {
+            background-color: #ff6b6b;
+            color: white;
+            padding: 10px 20px;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+        .release-dates {
+            margin-top: 20px;
+            font-size: 0.8rem;
+        }
+        .release-dates span {
+            display: block;
+        }
+        .floating-buttons {
+            position: absolute;
+            right: 20px;
+            bottom: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            align-items: center;
+        }
+        .floating-buttons button {
+            background-color: white;
+            border: none;
+            border-radius: 50%;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        .contain {
+            display: flex;
+            gap: 4px;
+            text-align: center;
+        }
+        .image-contain img {
+           width:70% ;
+        }
+        .conte {
+            padding: 30px;
+        }
+        .conte h1 {
+            color:#286f78;
+            font-size: 2.3em;
+            margin-bottom: 10px;
+        }
+        .conte p {
+            color: #555;
+            line-height: 2.1;
+        }
+        .conte p a {
+            color: #ff6b6b;
+            text-decoration: none;
+        }
+        .conte p a:hover {
+            text-decoration: underline;
+        }
+        .conte p span {
+            color: #ff6b6b;
+            font-weight: bold;
+        }
+
+        .UK{
+        background-color: #ccc;
+        height: 950px;
+       }
+        .contai {
+            position: relative;
+            width: 70%;
+            overflow: hidden;
+            margin-left: 250px;
+        }
+        .slider {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+        .slide {
+            min-width: 100%;
+            box-sizing: border-box;
+        }
+        .slide img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .navigation-buttons {
+            position: absolute;
+            top: 50%;
+
+            transform: translateY(-50%);
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 0px;
+        }
+        .navigation-buttons button {
+            background-color: #ff6b6b;
+            border: none;
+            border-radius: 50%;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 1rem;
+            color: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .dots {
+            position:absolute ;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 5px;
+        }
+        .dots span {
+            width: 10px;
+            height: 10px;
+            background-color: #ccc;
+            border-radius: 50%;
+            display: inline-block;
+            cursor: pointer;
+        }
+        .dots .active {
+            background-color: #ff6b6b;
+        }
+        
+        .floating-buttons {
+            position: absolute;
+            right: 20px;
+            bottom: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            align-items: center;
+        }
+        .floating-buttons button {
+            background-color: white;
+            border: none;
+            border-radius: 50%;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 1rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        header {
+    padding: 20px;
+    text-align: center;
+    background-color: #1c2731;
+    color: #fff;
+}
+
+.featured-on {
+    margin-bottom: 20px;
+}
+
+.featured-on span {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.logos img {
+    width: 5%;
+    margin: 20px 90px;
+    border-radius: 50%;
+}
+
+.search-bar {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.search-bar .logo {
+    height: 40px;
+    margin-right: 10px;
+}
+
+.search-bar input {
+    padding: 15px;
+    border-radius: 20px;
+    border: none;
+    width: 800px;
+}
+
+.newsletter {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.newsletter h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.newsletter p {
+    margin-bottom: 20px;
+}
+
+.subscribe {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.subscribe input {
+    padding: 10px;
+    border-radius: 20px 0 0 20px;
+    border: none;
+    width: 250px;
+}
+
+.subscribe button {
+    padding: 10px 20px;
+    border-radius: 0 20px 20px 0;
+    border: none;
+    background-color: #ff6347;
+    color: #fff;
+    cursor: pointer;
+}
+
+
+        footer {
+    background-color: #1c2731;
+    padding: 20px;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.footer-section {
+    flex: 1;
+    color: #fff;
+}
+
+.footer-section h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.footer-section ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 5px;
+}
+
+.footer-section ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-bottom {
+    border-top: 1px solid #444;
+    padding-top: 10px;
+    color: #fff;
+}
+
+.footer-bottom ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    margin: 10px 0;
+}
+
+.footer-bottom ul li {
+    margin: 0 10px;
+}
+
+.footer-bottom ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Tablets and smaller screens */
+@media (max-width: 768px) {
+    .gallery {
+        flex-direction: column;
+        align-items: center;
+    }
+    .gallery img {
+        width: 80%;
+    }
+}
+
+/* Mobile phones */
+@media (max-width: 480px) {
+    .gallery img {
+        width: 100%;
+    }
+}
+
+
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">
+            
+            <span style="font-size: 24px; color: #193550;"><b>recipetin</b><span style="color: #ff6f61;">eats</span></span>
+        </div>
+        <div class="nav-links">
+            <a href="Recipe my account2.html">MY RECIPETIN</a>
+            <a href="Recp New CookBook!3.html">MY NEW COOKBOOK!</a>
+            <a href="RECIPES4.html">RECIPES</a>
+            <a href="Recp my category5.html">BY CATEGORY</a>
+            <a href="Recp Collections6.html">COLLECTIONS</a>
+            <a href="Recp About7.html">ABOUT</a>
+        </div>
+        <div class="search">
+            <input type="text" placeholder="Search Recipes...">
+        </div>
+        <div class="social-icons">
+            <a href="#"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-youtube"></i></a>
+            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+        </div>
+    </div>
+<br><br>
+    <div class="container">
+        <div class="book">
+            <img src="https://www.recipetineats.com/tachyon/2024/07/Tonight-cookbook-packshot-v1.3-800px-min.png?fit=492%2C481&zoom=1.5" alt="Cookbook Cover" style="max-width: 100%;">
+        </div>
+        <div class="content">
+            <h1>Introducing my new cookbook:</h1>
+            <h2>TONIGHT</h2>
+            <p>150+ brand new recipes you can make TONIGHT!</p>
+            <div class="select-buttons">
+                <select>
+                    <option>Select Country</option>
+
+                    <option>Australia </option>
+                    <option>New Zealand</option>
+                    <option>United States</option>
+                    <option>Canada</option>
+                    <option>Unites Kingdom</option>
+                    <option>South Africe</option>
+
+                </select>
+                <select>
+<option>Select store</option>  
+                </select>
+            </div>
+            <br><br><br>
+            <button class="pre-order-button">PRE-ORDER</button>
+            <div class="release-dates">
+                <span>Book release dates:</span>
+                <span>AU/NZ 15 Oct 2024 | UK 17 Oct 2024 | US/CAN 29 Oct 2024</span>
+            </div>
+        </div>
+    </div>
+
+       
+   <br><br><br><br><br><br><br><br><br><br>
+   <div class="contain">
+    <div class="image-contain">
+        <img src="https://www.recipetineats.com/tachyon/2024/06/01-Nagi-in-kitchen-cropped-in-900px.jpg?resize=900%2C600&zoom=1" alt="Cookbook Image">
+    </div>
+    <div class="conte">
+        <h1>Surprise! I made another<br> cookbook.</h1>
+        <p>Over the past year, I've been <a href="#">secretly working</a> on my second cookbook,<br> <span>TONIGHT</span>. And I’m so thrilled to be able to finally tell you about it!</p>
+        <p><span>TONIGHT</span> is now available for pre-order in Australia, US, UK, Canada <br>and New Zealand. When you pre-order, it means you have secured a <br>copy and it will be delivered to your door on the release date: 15<br> October 2024 in Australia, 17 October in<br> the UK and 29 October in the US (we are working on closing the gaps!)</p>
+        <p><span>Why pre-order?</span> Well, it means you have secured a copy and you get it<br> on release date so you can start celebrating and cooking with me,<br> immediately! 😊 Also, it did become a bit difficult to find copies of<br> <span>Dinner</span>, first cookbook, leading up to Christmas due to low stock levels.<br> Even I struggled!</p>
+    </div>
+</div>
+   <br><br><br><br>
+
+   <div class="UK">
+    <br><br><br>
+    <h1 style="color: #193550 ; text-align: center;">More than 150 brand-new recipes        </h1>
+    <p style="color: #193550 ; text-align: center;">Click image for closer viewing (opens in new tab)        </p>
+    <br><br><br>
+
+<div class="contai">
+    <div class="slider" id="slider">
+        <div class="slide">
+            <img src="https://www.recipetineats.com/tachyon/2024/06/06-Easier-Meat-Pies-1200px.jpg?fit=1000%2C633" alt="Recipe Image 1">
+        </div>
+        <div class="slide">
+            <img src="https://www.recipetineats.com/tachyon/2024/06/01-Thai-Chicken-Wings-1200px.jpg?fit=1000%2C633" alt="Recipe Image 2">
+        </div>
+        <div class="slide">
+            <img src="https://www.recipetineats.com/tachyon/2024/06/02-Creamy-Mushroom-Wild-Rice-Soup-1200px.jpg?fit=1000%2C633" alt="Recipe Image 2">
+        </div>
+        <div class="slide">
+            <img src="https://www.recipetineats.com/tachyon/2024/06/03-Strawberry-Swirl-Shortcake-1200px.jpg?fit=1000%2C633" alt="Recipe Image 2">
+        </div>
+        <div class="slide">
+            <img src="https://www.recipetineats.com/tachyon/2024/06/04-Baked-Fish-with-Golden-Coconut-Sauce-1200px.jpg?fit=1000%2C633" alt="Recipe Image 2">
+        </div>
+        <div class="slide">
+            <img src="https://www.recipetineats.com/tachyon/2024/06/05-Crispy-Haloumi-Pearl-Couscous-1200px.jpg?fit=1000%2C633" alt="Recipe Image 2">
+        </div>
+        
+        <!-- Add more slides as needed -->
+    </div>
+    <div class="navigation-buttons">
+        <button id="prev">←</button>
+        <button id="next">→</button>
+    </div>
+    
+    <div class="dots" id="dots">
+        <span class="active"></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+
+
+        <!-- Add more dots as needed -->
+    </div>
+</div>
+</div>
+
+<script>
+    const slider = document.getElementById('slider');
+    const dots = document.getElementById('dots').children;
+    let currentIndex = 0;
+
+    document.getElementById('next').addEventListener('click', () => {
+        moveToSlide(currentIndex + 1);
+    });
+
+    document.getElementById('prev').addEventListener('click', () => {
+        moveToSlide(currentIndex - 1);
+    });
+
+    Array.from(dots).forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+            moveToSlide(index);
+        });
+    });
+
+    function moveToSlide(index) {
+        if (index >= dots.length) {
+            index = 0;
+        } else if (index < 0) {
+            index = dots.length - 1;
+        }
+        slider.style.transform = `translateX(-${index * 100}%)`;
+        updateDots(index);
+        currentIndex = index;
+    }
+
+    function updateDots(index) {
+        Array.from(dots).forEach(dot => dot.classList.remove('active'));
+        dots[index].classList.add('active');
+    }
+</script>
+
+<br><br><br><br><br>
+
+<div class="contain">
+    
+    <div class="conte">
+        <h1>About TONIGHT        </h1>
+        <p> <span>TONIGHT</span> is very special because it is designed specifically to provide<br> recipes that you can make tonight, with whatever you’ve got on hand,<br> no matter how rushed you are, catering for all budgets, tastes and<br> levels of cooking. There’s <span>150 brand new recipes,</span> plus 800 variations<br> on those recipes and <span>3,000 possible combinations</span> using mix-and<br>-match formulas!</p>
+        
+        <p>Some dinners can be cooked in 20 minutes, and others can be made <br>using only pantry staples – make dinner right now without going to the<br> store! For high-impact guest-impressing, turn to Sunday Suppers while<br> the Sweet chapter delivers on the promise of maximum decadence<br> with minimum fuss.</p>
+    
+        <p>There’s a chapter filled with recipes using just one-pot/tray, an entire<br> chapter dedicated to my beloved stir fry sauce, Charlie. And my<br> ultimate cheat sheet for how to roast (almost) any vegetable – plus 25<br> different ways to serve them – is now permanently stuck on my fridge.
+
+        </p>
+    
+    </div>
+
+    <div class="image-contain">
+        <img src="https://www.recipetineats.com/tachyon/2024/06/02-Nagi-and-Dozer-closeup-900px.jpg?resize=900%2C600&zoom=1" alt="Cookbook Image">
+    </div>
+</div>
+   <br><br><br><br><br><br>
+   <div class="contain">
+    <div class="image-contain">
+        <img src="https://www.recipetineats.com/tachyon/2024/06/03-Nagi-and-Dozer-Wall-Shot-900px.jpg?resize=900%2C600&zoom=1" alt="Cookbook Image">
+    </div>
+    <div class="conte">
+      <p>But the chapter I am most excited about is My Favourites Made Easier<br> which is filled with midweek versions of some of my favourite dishes.<br> Aussie Meat Pies on Monday night. 20 minute Hainanese Chicken. Fully<br> loaded Burritos made using just one pot, a one hour luxurious stew,<br> and a dump-and-bake Satay Chicken which I’m betting will be the <br>single most popular recipe in the whole book.</p> <br>   
+      <p>And – Dozer! It wouldn’t be a book I authored if there wasn’t plenty of <br>Dozer throughout the book. There have even been whisperings that I <br>only made this book as an excuse to shamelessly flaunt him….I plead<br> the fifth!</p>  <br>  
+<p>I’m so proud of TONIGHT. I hope you and your family enjoy cooking and <br>eating from it as much as I loved making it!<span> – Nagi x</span></p>
+        
+    
+    </div>
+</div>
+   <br><br><br><br>
+
+   <header>
+    <div class="featured-on">
+        <span>AS FEATURED ON</span>
+        <div class="logos">
+            <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTK5BrK1kGuvKvGgtWhWM2v_6Y4L-ieRe0B6hdFEr55bSGFIsNY" alt="Good Food">
+            <img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSKGYzO5270CV1aMPWMbqLz-F5ZgFLk77Xzg2qLxZBuQ952NALB" alt="Food Network">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgO18iQBw1BrCnjT9Yday0s4Ka9J0wgOblB0dNzT-ZvVb0KIht" alt="Taste">
+            <img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSGaXbOPLRS7MxxHIyJTtmB7ihoi3_yQoIswwKwqYyyM4oI5g3b" alt="9Now">
+            <img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRYlzCKWalA__F0cg1mUNCsfnsCEiWwl5165YKETxh6t1GwxvUH" alt="BuzzFeed">
+        </div>
+    </div>
+    <div class="search-bar">
+        <input type="text" placeholder="Search Recipes...">
+    </div>
+    <div class="newsletter">
+        <h2>Never miss a recipe!</h2>
+        <p>Subscribe to my newsletter and receive 3 FREE ebooks!</p>
+        <div class="subscribe">
+            <input type="email" placeholder="Enter your email">
+            <button>SUBSCRIBE</button>
+        </div>
+    </div>
+</header>
+<footer>
+    <div class="footer-content">
+        <div class="footer-section">
+            <h3>RECIPES</h3>
+            <ul>
+                <li><a href="#">All Recipes</a></li>
+                <li><a href="#">By Category</a></li>
+                <li><a href="#">Collections</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>ABOUT</h3>
+            <ul>
+                <li><a href="#">About Nagi</a></li>
+                <li><a href="#">About Dozer</a></li>
+                <li><a href="#">RecipeTin Meals</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>RELATED</h3>
+            <ul>
+                <li><a href="#">RecipeTin Japan</a></li>
+                <li><a href="#">Food Bloggers Central</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>HELP</h3>
+            <ul>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">Image Use Policy</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; RecipeTin Eats 2024</p>
+        <ul>
+            <li><a href="#">Privacy Policy & Terms</a></li>
+            <li><a href="#">Site Credits</a></li>
+            <li><a href="#">All Rights Reserved</a></li>
+        </ul>
+        <p>A Raptive Partner Site</p>
+    </div>
+</footer>
+
+
+
+</body>
+</html>

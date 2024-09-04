@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <title>RECIPES EATS</title>
+    <style>
+         body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+        
+        .search-bar {
+            margin: 20px;
+            width: 80%;
+            display: flex;
+            justify-content: center;
+            position: relative;
+        }
+        .search-bar input {
+            width: 100%;
+            padding: 10px 20px;
+            border-radius: 20px;
+            border: 1px solid #ddd;
+            font-size: 16px;
+        }
+        .search-bar input::placeholder {
+            color: #aaa;
+        }
+        .search-bar svg {
+            position: absolute;
+            right: 30px;
+            top: 50%;
+            transform: translateY(-50%);
+            fill: #f44336;
+            cursor: pointer;
+        }
+        .section-title {
+            width: 80%;
+            margin: 20px 0;
+            font-size: 24px;
+            color: #f44336;
+            text-align: left;
+        }
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: ;
+            width: 80%;
+        }
+        .card {
+            border-radius: 10px;
+            overflow: hidden;
+            width: 180px;
+            transition: transform 0.3s;
+            margin-bottom: 20px;
+            position: relative;
+        }
+        .card img {
+            width: 100%;
+            height: 200px;
+            display: block;
+        }
+        .card:hover {
+            transform: translateY(-10px);
+        }
+        .card-title {
+            padding: 10px;
+            font-size: 15px;
+            color: black;
+        }
+        .like-count {
+            display: flex;
+            align-items: ;
+            justify-content: ;
+            padding: 5px 10px;
+            font-size: 14px;
+            color: ;
+            position: absolute;
+            bottom: 0px;
+            right: 0px;
+            background-color: #fff;
+        }
+
+        .heart-container {
+            text-align: center;
+            margin: 50px;
+        }
+
+        
+        .text {
+            font-size: 40px;
+            color:black;
+            font-family: 'Brush Script MT', cursive;
+            margin-top: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+            
+        }
+
+        /* Tablets and smaller screens */
+@media (max-width: 768px) {
+    .gallery {
+        flex-direction: column;
+        align-items: center;
+    }
+    .gallery img {
+        width: 80%;
+    }
+}
+
+/* Mobile phones */
+@media (max-width: 480px) {
+    .gallery img {
+        width: 100%;
+    }
+}
+
+        
+    </style>
+</head>
+<body>
+    <div class="search-bar">
+        <input type="text" placeholder="Search recipes ...">
+        <svg height="24" width="24" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zM9.5 14C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path></svg>
+    </div>
+    <div class="section-title">LATEST</div>
+    <div class="card-container">
+        
+        <div class="card">
+            <div class="card-title">Crispy pea fritters • great emergency meal!</div><br>
+
+            <img src="https://www.recipetineats.com/tachyon/2024/07/Crispy-pea-fritters_4-3.jpg?resize=747%2C747&zoom=1" alt="Crispy pea fritters">
+
+            <div class="like-count">
+                <svg height="16" width="16" viewBox="0 0 24 24" fill="#f44336"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"></path></svg>
+                4,112
+            </div>
+
+        </div>
+        <div class="card">
+            <div class="card-title">Jam Drops (Thumbprint Cookies)</div><br>
+
+            <img src="https://www.recipetineats.com/tachyon/2024/07/Jam-drops-Thumbprint-cookies_5-2.jpg?resize=747%2C747&zoom=1" alt="Jam Drops">
+            <div class="like-count">
+                <svg height="16" width="16" viewBox="0 0 24 24" fill="#f44336"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"></path></svg>
+                4,436
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-title">Creamy chicken noodle soup with mini croutons</div><br>
+
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSADa2xTnSo2xaLu8pGN5HIMWb9chJ8fOSoAGq05sBxZz_8MCd9XHuotDpWj2nBmL0z4-k&usqp=CAU" alt="Creamy chicken noodle soup">
+            <div class="like-count">
+                <svg height="16" width="16" viewBox="0 0 24 24" fill="#f44336"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"></path></svg>
+                3,709
+            </div>
+        </div>
+        
+        <div class="card">
+            <div class="card-title">Crispy Potato Straws (Pommes Paille)</div><br>
+
+            <img src="https://www.recipetineats.com/tachyon/2024/07/Crispy-potato-straws-Pommes-Paille_6.jpg?resize=747%2C747&zoom=1" alt="Crispy Potato Straws">
+            <div class="like-count">
+                <svg height="16" width="16" viewBox="0 0 24 24" fill="#f44336"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"></path></svg>
+                867
+            </div>
+        </div>
+        
+        <div class="card">
+            <div class="card-title">Mediterranean tuna salad with creamy fet.. </div><br>
+
+            <img src="https://www.recipetineats.com/tachyon/2024/07/Mediterranean-Tuna-Salad-51486.jpg?resize=747%2C747&zoom=1" alt="Beef tataki">
+            <div class="like-count">
+                <svg height="16" width="16" viewBox="0 0 24 24" fill="#f44336"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"></path></svg>
+                1,718
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-title">Modern fusion Japanese Menu</div><br>
+            <img src="https://www.recipetineats.com/tachyon/2024/07/Japanese-Fusion-Menu-hero-photo.jpg?resize=747%2C747&zoom=1" alt="Beef tataki">
+            <div class="like-count">
+                <svg height="16" width="16" viewBox="0 0 24 24" fill="#f44336"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"></path></svg>
+                1,718
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-title">Beef tataki</div><br>
+
+            <img src="https://www.recipetineats.com/tachyon/2024/07/Beef-tataki_8.jpg?resize=747%2C747&zoom=1" alt="Beef tataki">
+            <div class="like-count">
+                <svg height="16" width="16" viewBox="0 0 24 24" fill="#f44336"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"></path></svg>
+                1,718
+            </div>
+        </div>
+        
+        <div class="card">
+            <div class="card-title">Spicy edamame</div><br>
+
+            <img src="https://www.recipetineats.com/tachyon/2024/07/Spicy-edamame-47582.jpg?resize=747%2C747&zoom=1" alt="Spicy edamame">
+            <div class="like-count">
+                <svg height="16" width="16" viewBox="0 0 24 24" fill="#f44336"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"></path></svg>
+                277
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-title">Cheesymite Scrolls</div><br>
+
+            <img src="https://www.recipetineats.com/tachyon/2024/08/Cheesymite-scrolls_0.jpg?resize=747%2C747&zoom=1" alt="Beef tataki">
+            <div class="like-count">
+                <svg height="16" width="16" viewBox="0 0 24 24" fill="#f44336"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"></path></svg>
+                1,718
+            </div>
+        </div>
+       
+    </div>
+
+<br><br><br><br><br>
+
+
+    <div class="section-title"> POPULAR</div>
+    <br><br>
+    <div class="card-container">
+        
+        <div class="card">
+            <div class="card-title">Carnitas (Mexican Slow Cooker Pulled Pork)</div><br>
+
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3fBwiTS9t2Ac33U6i26i4YDFS4vJGWDDI1g&s" alt="Crispy pea fritters">
+
+            <div class="like-count">
+                <svg height="16" width="16" viewBox="0 0 24 24" fill="#f44336"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"></path></svg>
+                4,112
+            </div>
+
+        </div>
+        <div class="card">
+            <div class="card-title">Ultra Crispy Smashed Potatoes</div><br>
+
+            <img src="https://www.recipetineats.com/uploads/2018/02/Crispy-Smashed-Potatoes_4a_1500px.jpg" alt="Jam Drops">
+            <div class="like-count">
+                <svg height="16" width="16" viewBox="0 0 24 24" fill="#f44336"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"></path></svg>
+                4,436
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-title">Honey Garlic Chicken Breast</div><br>
+
+            <img src="https://www.recipetineats.com/tachyon/2018/09/Honey-Garlic-Chicken-Breast_5.jpg" alt="Creamy chicken noodle soup">
+            <div class="like-count">
+                <svg height="16" width="16" viewBox="0 0 24 24" fill="#f44336"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"></path></svg>
+                3,709
+            </div>
+        </div>
+        
+        <div class="card">
+            <div class="card-title">Quick & Easy Baked Zucchini</div><br>
+
+            <img src="https://www.recipetineats.com/uploads/2020/07/Parmesan-Roasted-Zucchini_4.jpg" alt="Crispy Potato Straws">
+            <div class="like-count">
+                <svg height="16" width="16" viewBox="0 0 24 24" fill="#f44336"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"></path></svg>
+                867
+            </div>
+        </div>
+        
+        <div class="card">
+            <div class="card-title">My very best Vanilla Cake • stays moist 4  </div><br>
+
+            <img src="https://www.recipetineats.com/tachyon/2020/08/My-best-Vanilla-Cake_0.jpg" alt="Beef tataki">
+            <div class="like-count">
+                <svg height="16" width="16" viewBox="0 0 24 24" fill="#f44336"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"></path></svg>
+                1,718
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-title">Oven Baked Chicken Breast</div><br>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkXNGUAIykwg9GCU6lD72DLnHv0wjtA8YyBA&s" alt="Beef tataki">
+            <div class="like-count">
+                <svg height="16" width="16" viewBox="0 0 24 24" fill="#f44336"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"></path></svg>
+                1,718
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-title"> Butter Chicken</div><br>
+
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5f8A9JmZhZBocE13TPfmu76LY12TIMRaxKg&s" alt="Beef tataki">
+            <div class="like-count">
+                <svg height="16" width="16" viewBox="0 0 24 24" fill="#f44336"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"></path></svg>
+                1,718
+            </div>
+        </div>
+        
+        <div class="card">
+            <div class="card-title">Beef Stroganoff </div><br>
+
+            <img src="https://www.recipetineats.com/uploads/2018/01/Beef-Stroganoff_2-1-1.jpg" alt="Beef tataki">
+            <div class="like-count">
+                <svg height="16" width="16" viewBox="0 0 24 24" fill="#f44336"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"></path></svg>
+                1,718
+            </div>
+        </div>
+        
+        <div class="card">
+            <div class="card-title">Spaghetti Bolognese</div><br>
+
+            <img src="https://media.istockphoto.com/id/1429067111/photo/spaghetti-bolognese-top-view-close-up-no-people-homemade.jpg?s=612x612&w=0&k=20&c=bbQNnyIcRNBUXgWemvw7EeFufrbKlMDeoft1POUtVEg=" alt="Spicy edamame">
+            <div class="like-count">
+                <svg height="16" width="16" viewBox="0 0 24 24" fill="#f44336"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"></path></svg>
+                277
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-title">How to boil eggs</div><br>
+
+            <img src="https://www.recipetineats.com/uploads/2023/03/How-long-to-boil-eggs-square.jpg" alt="Beef tataki">
+            <div class="like-count">
+                <svg height="16" width="16" viewBox="0 0 24 24" fill="#f44336"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"></path></svg>
+                1,718
+            </div>
+        </div>
+       
+    </div>
+
+    <br><br><br> 
+    <div class="heart-container">
+        <div class="heart"><i class="fa-sharp fa-regular fa-heart"></i></div>
+        <div class="text">  <i class="fa-sharp fa-regular fa-heart"></i>MY RECIPES</div>
+    </div>
+
+    <br><br><br>
+        
+</body>
+</html>
